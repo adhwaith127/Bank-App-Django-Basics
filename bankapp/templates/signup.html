@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bankapp/signup.css' %}">
+</head>
+<body>
+    <div id="signup">
+        <form id="signupform" method="post">
+            <h1>Create Account</h1>
+            {% csrf_token %}
+            <div class="form-fields">
+                {% for field in form %}
+                    <div class="form-group">
+                        <label>{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.errors %}
+                            {% for error in field.errors %}
+                                <span class="error">{{ error }}</span>
+                            {% endfor %}
+                        {% endif %}
+                        {% if formerrors %}
+                            {% for error in formerrors %}
+                                <span class="error">{{ error }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            {% if message %}
+                <p class="message">{{ message }}</p>
+            {% endif %}
+            {% if numbererror %}
+                <div class="error">{{ numbererror }}</div>
+            {% endif %}
+            {% if nameerror %}
+                <div class="error">{{ nameerror }}</div>
+            {% endif %}
+            {% if balanceerror %}
+                <div class="error">{{ balanceerror }}</div>
+            {% endif %}
+            <button type="submit">Create Account</button>
+            <p>Already have an account? <a href="{% url 'userlogin' %}">Login</a></p>
+        </form> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+.action-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    background-color: #d8d6d6;
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+}
+
+.action-btn:hover {
+    background-color: rgb(80, 80, 80);
+    color: white;
+}
+
+.action1 {
+    background-color: black;
+    color: white;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: 0.5rem 1rem;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(226, 204, 204);
+  padding: 30px 25px;
+  border-radius: 10px;
+  margin: 50px;
+}
+
+#wdr{
+    width: 98%;
+}

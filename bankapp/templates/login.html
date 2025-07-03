@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bankapp/login.css' %}">
+</head>
+<body>
+    <div id="login">
+        <form id="loginform" method="post">
+            <h1>Login</h1>
+            {% csrf_token %}
+            <div class="form-fields">
+                <label for="accountnumber">Account Number:</label><br/><br/>
+                <input type="text" id="accountnumber" name="accountnumber"><br/><br/>
+                <label for="password">Password:</label><br/><br/>
+                <input type="password" id="password" name="password"><br/><br/>
+                {% if message %}
+                <p class="message">{{ message }}</p>
+                {% endif %}
+                <button type="submit">Login</button>
+                <p>Don't have an acount?<a href="{% url 'signup' %}">Signup</a> here</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

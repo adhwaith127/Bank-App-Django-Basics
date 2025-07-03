@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bankapp/page.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="detailscontainer">
+        <div class="pagecontainer">    
+            <div id="details">
+                <h1>Hello, {{accountname}}</h1>
+                <p>Your Account details</p>
+                <div class="info-grid">
+                    <div>Account Number</div><div>{{ accountnumber }}</div>
+                    <div>Account Balance</div><div>{{ accountbalance }}</div>
+                </div>
+                <a href="{% url 'home' %}" id="home-btn">Go back Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

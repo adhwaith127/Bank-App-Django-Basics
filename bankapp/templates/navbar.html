@@ -1,0 +1,37 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'bankapp/styles.css' %}">
+<style>
+    *{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+    #navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 1px;
+    overflow: hidden;
+    background-color: #333;
+}
+#navbar li{
+    float: left;
+}
+#navbar li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+</style>
+
+<nav id="navbar">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'details' %}">Account details</a></li>
+        <li><a href="{% url 'withdrawal' %}">Withdrawal</a></li>
+        <li><a href="{% url 'deposit' %}">Deposit</a></li>
+        <li><a href="{% url 'userlogout' %}">Logout</a></li>
+</nav>
