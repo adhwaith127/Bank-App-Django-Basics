@@ -66,7 +66,7 @@ def userlogin(request):
 def home(request):
     return render(request,'home.html')
 
-@never_cache
+@never_cache #to avoid loading home page after logout
 @login_required(login_url='userlogin')
 def details(request):
     user=request.user
@@ -75,7 +75,7 @@ def details(request):
     accountbalance=user.accountbalance
     return render(request,'details.html',{'accountnumber':accountnumber,'accountname':accountname,'accountbalance':accountbalance})
 
-@never_cache 
+@never_cache #to avoid loading home page after logout
 @login_required(login_url='userlogin')
 def withdrawal(request):
     if request.method=='POST':
@@ -103,7 +103,7 @@ def withdrawal(request):
     return render(request,'withdrawal.html',{'accountnumber':accountnumber,'accountname':accountname,'accountbalance':accountbalance})
     
 
-@never_cache
+@never_cache #to avoid loading home page after logout
 @login_required(login_url='userlogin')
 def deposit(request):
     if request.method=='POST':
